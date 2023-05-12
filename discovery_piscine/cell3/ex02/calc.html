@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px
+        }
+    </style>
+    <script>
+        
+        window.addEventListener('DOMContentLoaded', () => {
+                
+
+            function operar(){
+                let operando1 = parseFloat(document.getElementById("operando1").value)
+               let operando2 = parseFloat(document.getElementById("operando2").value)
+               let operador = document.getElementById("operador").value
+               let resultado = ""
+            
+               if (operador == "+" ){
+                 resultado = operando1 + operando2
+               }else if (operador == "-"){
+                resultado = operando1 - operando2
+               }else if (operador == "*"){
+                resultado = operando1 * operando2
+               }else if (operador == "/"){
+                resultado = operando1 / operando2
+               }else if (operador = "%"){
+                resultado = operando1 % operando2
+            }
+        }
+        })
+    </script>
+    <title>Calculadora</title>
+</head>
+<body>
+<div class="container">
+    <h1>Calculadora</h1>
+    <form>
+        
+        <label for="name_1">Primer operando:</label>
+        <input type="text" id="operando1" required minlength="0" maxlength="10" size="12">
+
+        <label for="operador">Selecciona operador:</label>
+        <select id="operador">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <label for="name_2">Segundo operando:</label>
+        <input type="text" id="operando2" required minlength="0" maxlength="10" size="12">
+        <input type="submit" onclick="operar()">
+    </form>
+    <p id="resultado"></p>
+</div>
+</body>
+</html>
